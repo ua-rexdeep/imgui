@@ -7,7 +7,11 @@ export class VehicleService {
     private store: Record<number, ImGUI> = {};
     constructor(
         private readonly guiService: GUIService,
-    ){}
+    ){
+        on('ImGUI:AddVehicleGUI', (vehicle: number) => {
+            this.CreateVehicleGUI(vehicle).Deploy();
+        });
+    }
 
     CreateVehicleGUI(vehicle: number) {
         const Vehicle = this.guiService.Create(`vehicle${vehicle}`, {

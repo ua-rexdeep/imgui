@@ -104,6 +104,86 @@ setTimeout(() => {
         ImGUI.Log('Start.')
     }
 
+
+
+    if (!ImGUI.GetById("Vehicle")) ImGUI.CreateGUI("Vehicle", {
+        title: "Vehicle: 293648 | Network: %lime%28",
+        width: 460,
+        height: 320,
+        resize: false,
+        contents: [
+            { type: 'text', value: 'Model: POLICE3', object: {} },
+            {
+                type: 'horizontal',
+                content: [
+                    { type: 'text', value: 'XYZ:' },
+                    { type: 'text', value: '1.28, 1027.28, 0.23', userSelect: true },
+                ]
+            },
+            {
+                type: 'horizontal',
+                content: [
+                    { type: 'text', value: 'Distance: 24.1 (0km)' },
+                ]
+            },
+            {
+                type: 'horizontal',
+                content: [
+                    { type: 'text', value: 'Rotation(order 2):' },
+                    {
+                        type: 'vertical',
+                        width: 50,
+                        content: [
+                            { type: 'float', value: 0, min: 0, max: 380, step: 0.01, override: 'X: %' },
+                            { type: 'float', value: 0, min: 0, max: 380, step: 0.01, override: 'Y: %' },
+                            { type: 'float', value: 0, min: 0, max: 380, step: 0.01, override: 'Z: %' },
+                        ]
+                    }
+                ]
+            },
+            {
+                type: 'horizontal',
+                content: [
+                    { type: 'text', value: 'Freeze:' },
+                    { type: 'check', checked: false },
+                ]
+            },
+            {
+                type: 'horizontal',
+                content: [
+                    { type: 'text', value: 'DrawLine:' },
+                    { type: 'check', checked: false },
+                    { type: 'float', width: 25, value: 0, min: 0, max: 255, step: 1, override: 'R: %' },
+                    { type: 'float', width: 25, value: 0, min: 0, max: 255, step: 1, override: 'G: %' },
+                    { type: 'float', width: 25, value: 0, min: 0, max: 255, step: 1, override: 'B: %' },
+                ]
+            },
+            {
+                type: 'horizontal',
+                content: [
+                    { type: 'text', value: 'Plate number:' },
+                    { type: 'input', value: 'AA0000AA' },
+                ]
+            },
+            {
+                type: 'horizontal',
+                content: [
+                    { type: 'text', value: 'Fuel level:' },
+                    { type: 'float', width: 50, value: 0, min: 0, max: 64, step: 0.01, override: '%L / 64L' },
+                ]
+            },
+            { type: 'divider' },
+            {
+                type: 'horizontal',
+                content: [
+                    { type: 'button', text: 'Warp into vehicle' },
+                    { type: 'button', text: 'Warp to me' },
+                    { type: 'button', text: 'DELETE', style: 'error' },
+                ]
+            }
+        ],
+    });
+
 }, 100)
 
 </script>

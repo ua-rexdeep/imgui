@@ -5,6 +5,7 @@ import { GUIDivider } from './components/divider';
 import { GUIFloat, GUIFloatInit } from './components/float';
 import { GUIInput, GUIInputInit } from './components/input';
 import { GUIPanel, GUIPanelInit } from './components/panel';
+import { GUISelect } from './components/select';
 import { GUIText, GUITextInit } from './components/text';
 
 export type GUIContent = any[] 
@@ -18,7 +19,7 @@ export interface GUIInit {
     collapsed?: boolean,
 }
 
-export type TContents = GUIText | GUIPanel | GUIButton | GUIFloat | GUICheck | GUIInput | GUIDivider;
+export type TContents = GUIText | GUIPanel | GUIButton | GUIFloat | GUICheck | GUIInput | GUIDivider | GUISelect;
 
 export class ImGUI {
     private readonly api = new API();

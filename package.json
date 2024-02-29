@@ -2,7 +2,15 @@
     "name": "imgui",
     "version": "1.0.0",
     "description": "",
-    "scripts": {},
+    "scripts": {
+        "client:build": "cd client && npm run build",
+        "client:build:watch": "cd client && npm run build -- --watch",
+        "lib:build": "cd lib && npm run build",
+        "lib:build:watch": "cd lib && npm run build -- --watch",
+        "ui:dev": "cd ui && npm run dev",
+        "ui:build": "cd ui && npm run build",
+        "ui:build:watch": "cd ui && npm run build -- --watch"
+    },
     "author": "",
     "license": "ISC",
     "dependencies": {
@@ -10,5 +18,8 @@
         "@typescript-eslint/parser": "^7.1.0",
         "eslint": "^8.57.0",
         "ts-loader": "^9.5.1"
+    },
+    "devDependencies": {
+        "esbuild": "0.20.1"
     }
 }

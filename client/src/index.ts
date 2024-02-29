@@ -2,7 +2,6 @@
 // import * as cors from 'cors';
 // import * as express from 'express';
 
-import { VehicleRuntime } from './_vehicleruntime';
 import { MainRuntime } from './runtime';
 import { GUIService } from './services/guiService';
 import { Threads } from './threads';
@@ -31,7 +30,6 @@ if(process.env.NODE_ENV == 'production') {
 
     setTimeout(() => {
         new MainRuntime(threads);
-        new VehicleRuntime(threads, service);
     }, 100);
 }
 

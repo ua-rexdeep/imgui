@@ -48,6 +48,7 @@ export class GUIService {
             else if(data.type == 'divider') gui?.GetContentById<GUIPanel>(parentId)?.AddDivider();
             else if(data.type == 'input') gui?.GetContentById<GUIPanel>(parentId)?.AddInput(data.id, data.value, data);
             else if(data.type == 'check') gui?.GetContentById<GUIPanel>(parentId)?.AddCheck(data.id, data.checked, data);
+            else if(data.type == 'select') gui?.GetContentById<GUIPanel>(parentId)?.AddSelect(data.id, data.value, data.options, data);
             else console.error(`addComponent error: no type to add ${data.type}`, data);
         });
     }

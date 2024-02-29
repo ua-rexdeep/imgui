@@ -4,6 +4,7 @@ import { GUICheck } from './check';
 import { GUIDivider } from './divider';
 import { GUIFloat, GUIFloatInit } from './float';
 import { GUIInput, GUIInputInit } from './input';
+import { GUISelect, GUISelectInit } from './select';
 import { GUIText, GUITextInit } from './text';
 
 export interface GUIPanelInit {
@@ -78,6 +79,14 @@ export class GUIPanel {
 
     AddDivider() {
         const component = new GUIDivider(this.GUI, this.GUI.GetNextComponentID());
+        this.contents.push(component);
+        if(this.GUI.IsDeployed()) this.GUI.Reload();
+        return component;
+    }
+
+    AddSelect(id: string | null, value: string, options: Record<string | number, string>, data?: Partial<GUISelectInit>) {
+        const component = new GUISelect(this.GUI, id || this.GUI.GetNextComponentID(), 
+            { ...data, value, options });
         this.contents.push(component);
         if(this.GUI.IsDeployed()) this.GUI.Reload();
         return component;

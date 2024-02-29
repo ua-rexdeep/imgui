@@ -1,4 +1,8 @@
 import { DelayBeforeNullResponse, GetFreeRID, requestedItems, store } from '../imgui';
+import { GUIButton } from './button';
+import { GUIFloat } from './float';
+import { GUIPanel } from './panel';
+import { GUIText } from './text';
 
 export class ImGUI {
     private readonly id: string;
@@ -13,7 +17,7 @@ export class ImGUI {
         }
     }
     GetID() { return this.id; }
-    GetComponentById<T = any>(id: string | number): Promise<T> {
+    GetComponentById<T = GUIFloat | GUIPanel | GUIText | GUIButton>(id: string | number): Promise<T> {
         if(store[this.GetID()]?.components[id]) return store[this.GetID()].components[id] as any as Promise<T>;
         const rid = GetFreeRID();
         return new Promise((done: (component: T) => void) => {

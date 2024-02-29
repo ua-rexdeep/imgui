@@ -6,7 +6,6 @@ import { GUIPanel } from './classes/panel';
 import { GUIText } from './classes/text';
 
 export const DelayBeforeNullResponse = 1000;
-
 export const store: Record<string, { gui: ImGUI, components: Record<string, GUIFloat | GUIText | GUIButton | GUIPanel> }> = {};
 
 export const requestedItems: { cb: (gui: any) => void, gui?: ImGUI, guiid?: string }[] = [];
@@ -88,3 +87,8 @@ export async function GetGUI(id: string){
         setTimeout(done, DelayBeforeNullResponse, null);
     });
 }
+
+export {
+    GUIButton, GUIFloat, GUIPanel, GUIText, ImGUI
+};
+
